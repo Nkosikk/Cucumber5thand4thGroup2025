@@ -2,6 +2,8 @@ package stepDefinitions;
 
 import io.cucumber.java.en.*;
 
+import static utils.HelperFunctions.alertHandler;
+
 public class LoginSteps {
 
     @Given("I am on the login page")
@@ -24,5 +26,10 @@ public class LoginSteps {
     @Then("I should be redirected to the dashboard")
     public void i_should_be_redirected_to_the_dashboard() {
 
+    }
+
+    @Then("I should be getting error message {}")
+    public void iShouldBeGettingErrorMessage(String message) {
+        alertHandler(message);
     }
 }

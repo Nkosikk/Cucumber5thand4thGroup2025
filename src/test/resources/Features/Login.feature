@@ -9,4 +9,4 @@ Feature: User login test
 
     Examples:
       | username      | password     |
-      | standard_user | secret_sauce |
+      | teacher@gmail.com | @12345678 |

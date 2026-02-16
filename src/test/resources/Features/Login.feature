@@ -1,12 +1,31 @@
+@smoke
 Feature: User login test
 
-  Scenario Outline: Successful login with valid credentials
+  Scenario Outline: User navigates to learning materials
     Given I am on the login page
     When I enter valid username <username>
     And I enter valid password <password>
     And I click the login button
     Then I should be redirected to the dashboard
+    When I click on the Learn tab
+    And I click on learning materials tab
+    And Click on the web automation basic button
+    Then Insert full name
+    And Insert email address
+    And Insert age
+    And Select gender
+    And Select country
+    And Select experience level
+    And Select skills
+    Then Add a comment
+
 
     Examples:
-      | username      | password     |
-      | teacher@gmail.com | @12345678 |
+      | username           | password    |
+      | kmblouws@gmail.com | D3vt3sting# |
+
+
+
+
+
+

@@ -6,9 +6,10 @@ import utils.Base;
 
 public class LoginSteps extends Base {
 
+
     @Given("I am on the login page")
     public void i_am_on_the_login_page() {
-        loginPage.clickNavLoginButton();
+       loginPage.clickNavLoginButton();
 
     }
 
@@ -31,7 +32,37 @@ public class LoginSteps extends Base {
     public void i_should_be_redirected_to_the_dashboard() {
         String actualValue = loginPage.getLoginSuccessMessage();
         System.out.println("Actual login success message: " + actualValue);
-        String expectedValue = "Welcome back, Sbuda! \uD83D\uDC4B";
+        String expectedValue = "Welcome back, Keishia! \uD83D\uDC4B";
         Assert.assertEquals(actualValue, expectedValue, "Expected message: " + expectedValue + ", but got: " + actualValue);
     }
+
+    @Given("I am logged in")
+    public void iAmLoggedIn() {
+        loginPage.clickNavLoginButton();
+    }
+
+  /* @Given("I am logged in")
+    public void iAmLoggedIn() {
+        loginPage.clickNavLoginButton();}*/
+
+
+    @Then("I click on the Learn tab")
+    public void i_click_on_the_learn_tab() {
+        learningMaterialsPage.clickLearnButton();
+    }
+
+    @And("I click on learning materials tab")
+    public void iClickOnLearningMaterialsTab() {
+        learningMaterialsPage.clickLearningMaterialsButton();
+    }
+
+
+    @And("Click on the web automation basic button")
+    public void clickOnTheWebAutomationBasicButton() {
+       learningMaterialsPage.clickWebAutomationBasicForm();
+    }
 }
+
+
+
+

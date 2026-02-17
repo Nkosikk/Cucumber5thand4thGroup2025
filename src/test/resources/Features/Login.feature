@@ -18,6 +18,8 @@ Feature: User login test
     And Select experience level
     And Select skills
     Then Add a comment
+    Then Select the terms and conditions button
+    And Select the submit form button
 
 
     Examples:

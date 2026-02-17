@@ -1,7 +1,9 @@
 package stepDefinitions;
 
+import io.cucumber.java.PendingException;
 import io.cucumber.java.en.*;
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
 import utils.Base;
 
 public class LoginSteps extends Base {
@@ -9,7 +11,7 @@ public class LoginSteps extends Base {
 
     @Given("I am on the login page")
     public void i_am_on_the_login_page() {
-       loginPage.clickNavLoginButton();
+        loginPage.clickNavLoginButton();
 
     }
 
@@ -59,8 +61,64 @@ public class LoginSteps extends Base {
 
     @And("Click on the web automation basic button")
     public void clickOnTheWebAutomationBasicButton() {
-       learningMaterialsPage.clickWebAutomationBasicForm();
+        learningMaterialsPage.clickWebAutomationBasicForm();
     }
+
+    @Then("Insert full name")
+    public void insertFullName() {
+        learningMaterialsPage.enterName();
+    }
+
+    @And("Insert email address")
+    public void insertEmailAddress() {
+        learningMaterialsPage.enterEmail();
+    }
+
+    @And("Insert age")
+    public void insertAge() {
+        learningMaterialsPage.enterAge();
+    }
+
+    @And("Select gender")
+    public void selectGender() {
+        learningMaterialsPage.selectGender();
+    }
+
+    @And("Select country")
+    public void selectCountry() {
+        learningMaterialsPage.selectCountry();
+    }
+
+
+    @And("Select experience level")
+    public void selectExperienceLevel() {
+        learningMaterialsPage.selectExperienceLevel();
+    }
+
+    @And("Select skills")
+    public void selectSkills() {
+        learningMaterialsPage.selectSkill();
+
+    }
+
+    @Then("Add a comment")
+    public void addAComment() {
+        learningMaterialsPage.enterComment();
+
+    }
+
+    @Then("Select the terms and conditions button")
+    public void selectTheTermsAndConditionsButton() {
+       learningMaterialsPage.selectTermsAndConditions();
+    }
+
+
+    @And("Select the submit form button")
+    public void selectTheSubmitFormButton() {
+        learningMaterialsPage.selectTheSubmitButton();
+    }
+
+
 }
 
 

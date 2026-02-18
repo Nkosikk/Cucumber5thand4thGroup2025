@@ -1,43 +1,37 @@
 package utils;
 
+import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
 public class BrowserFactory {
 
-     static WebDriver driver;
+    WebDriver driver = null;
+    public WebDriver startBrowser(String browserName, String url) {
 
-    public static WebDriver startBrowser(String browserChoice, String url) {
+        if (browserName.equalsIgnoreCase("chrome")) {
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--incognito"); // Enable incognito mode
+            driver = new ChromeDriver(options);
 
-        switch (browserChoice.toLowerCase()) {
-            case "chrome":
-                // Initialize ChromeDriver with options
-                 ChromeOptions chromeOptions = new ChromeOptions();
-                 chromeOptions.addArguments("--incognito");
-                 driver = new ChromeDriver(chromeOptions);
-                break;
-            case "internetexplore":
-                 driver = new InternetExplorerDriver();
-                break;
-            case "firefox":
-                 driver = new FirefoxDriver();
-                break;
-            case "safari":
-                 driver = new SafariDriver();
-                break;
-            default:
-                 driver = new EdgeDriver();
-                break;
+        } else if (browserName.equalsIgnoreCase("firefox")) {
+            driver = new FirefoxDriver();
+
+        } else if (browserName.equalsIgnoreCase("edge")) {
+            driver = new EdgeDriver();
+
+        } else {
+            driver = new SafariDriver();
         }
 
         driver.manage().window().maximize();
         driver.get(url);
-
         return driver;
     }
+
+
 }

@@ -1,7 +1,9 @@
 package utils;
 
+import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
@@ -12,7 +14,9 @@ public class BrowserFactory {
     public WebDriver startBrowser(String browserName, String url) {
 
         if (browserName.equalsIgnoreCase("chrome")) {
-            driver = new ChromeDriver();
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--incognito"); // Enable incognito mode
+            driver = new ChromeDriver(options);
 
         } else if (browserName.equalsIgnoreCase("firefox")) {
             driver = new FirefoxDriver();

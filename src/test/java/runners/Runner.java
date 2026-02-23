@@ -4,7 +4,7 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 
-@CucumberOptions(features = "src/test/resources/Features",
+@CucumberOptions(features = "src/test/resources/Features/CreateUserAssignment.feature",
 
         glue = "stepDefinitions",
         tags = "@smoke",
@@ -12,6 +12,6 @@ import io.cucumber.testng.CucumberOptions;
         plugin = {"pretty"})
 
 
-public class runner extends AbstractTestNGCucumberTests {
+public class Runner extends AbstractTestNGCucumberTests {
 
 }

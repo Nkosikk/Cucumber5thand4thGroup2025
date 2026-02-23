@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="/Users/keishiablouws/Documents/AutomationProject2/Cucumber5thand4thGroup2025">
+
+
+        <classes>
+            <class name="runners.Runner"></class>
+
+        </classes>
+
+    </test>
+
+
+<listeners>
+    <listener class-name="ExtentReports.Listener"/>
+
+</listeners>
+
+</suite>
+

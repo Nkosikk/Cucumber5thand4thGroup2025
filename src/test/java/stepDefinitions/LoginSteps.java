@@ -1,9 +1,7 @@
 package stepDefinitions;
 
-import io.cucumber.java.PendingException;
 import io.cucumber.java.en.*;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
 import utils.Base;
 
 public class LoginSteps extends Base {
@@ -12,7 +10,6 @@ public class LoginSteps extends Base {
     @Given("I am on the login page")
     public void i_am_on_the_login_page() {
         loginPage.clickNavLoginButton();
-
     }
 
     @When("I enter valid username {}")

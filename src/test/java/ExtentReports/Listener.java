@@ -36,7 +36,7 @@ public class Listener implements ITestListener {
     public void onFinish(ITestContext result){
         extent.flush();
     }
-
+    @Override
     public void onStart(ITestContext result){
         extent = ExtentReportsManager.extentReports();
     }

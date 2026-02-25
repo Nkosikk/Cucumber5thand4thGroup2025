@@ -1,5 +1,6 @@
 package stepDefinitions;
 
+import io.cucumber.java.PendingException;
 import io.cucumber.java.en.*;
 import org.testng.Assert;
 import utils.Base;
@@ -116,6 +117,10 @@ public class LoginSteps extends Base {
     }
 
 
+   /* @And("Select the admin profile button")
+    public void selectTheAdminProfileButton() {
+        learningMaterialsPage.selectTheSubmitButton();
+    }*/
 }
 
 

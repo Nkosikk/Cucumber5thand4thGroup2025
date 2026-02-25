@@ -15,6 +15,7 @@ public class Base {
     public LearningMaterialsPage learningMaterialsPage;
     public AssignmentCreateUserPage assignmentCreateUserPage;
 
+    // ✅ Constructor to start browser and initialize page objects
     public Base() {
         driver = browserFactory.startBrowser(
                 "chrome",
@@ -25,4 +26,6 @@ public class Base {
         learningMaterialsPage = PageFactory.initElements(driver, LearningMaterialsPage.class);
         assignmentCreateUserPage = PageFactory.initElements(driver, AssignmentCreateUserPage.class);
     }
+
 }
+

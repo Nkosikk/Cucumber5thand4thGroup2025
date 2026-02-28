@@ -101,6 +101,25 @@ public class AssignmentCreateUserSteps extends Base {
       assignmentCreateUserPage.verifyAdminDashboard();
     }
 
+    @Then("select the approvals button inside the admin portal")
+    public void selectTheApprovalsButtonInsideTheAdminPortal() {
+        assignmentCreateUserPage.selectApprovalsButton();
+    }
+
+    @And("search for email of user created")
+    public void searchForEmailOfUserCreated() {
+       assignmentCreateUserPage.searchGeneratedEmailUnderApprovals();
+    }
+
+    @And("approve the user under actions")
+    public void approveTheUserUnderActions() {
+        assignmentCreateUserPage.clickApproveForGeneratedEmail();
+    }
+
+
+
+
+
     @And("I select the users button inside the admin portal")
     public void iSelectTheUsersButtonInsideTheAdminPortal() {
        assignmentCreateUserPage.selectUsersInAdminPortal();
@@ -111,20 +130,14 @@ public class AssignmentCreateUserSteps extends Base {
         assignmentCreateUserPage.searchWithGeneratedEmail();
     }
 
-    @And("click to activate the user")
-    public void clickToActivateTheUser() {
-        assignmentCreateUserPage.selectInactiveButton();
+
+    @And("click to create an admin user")
+    public void clickToCreateAnAdminUser() {
+        assignmentCreateUserPage.selectAdminRoleAndHandleAlertForGeneratedEmail();
     }
 
-    @And("click okay on the alert to activate the user")
-    public void clickOkayOnTheAlertToActivateTheUser() {
-        assignmentCreateUserPage.confirmUserActivation();
-    }
 
-    @Then("click okay on successful activation alert")
-    public void clickOkayOnSuccessfulActivationAlert() {
-        assignmentCreateUserPage.confirmActivationIsSuccessful();
-    }
+
 
     @And("select to go back to the website")
     public void selectToGoBackToTheWebsite() {
@@ -146,6 +159,49 @@ public class AssignmentCreateUserSteps extends Base {
     @Then("confirm that I am sure I want to logout")
     public void confirmThatIAmSureIWantToLogout() {
         assignmentCreateUserPage.confirmOfLogout();
+    }
+
+    @Given("I am back on the landing page")
+    public void iAmBackOnTheLandingPage() {
+       assignmentCreateUserPage.verifyDashboard();
+    }
+
+
+    @Then("Select Login button on dashboard")
+    public void selectLoginButtonOnDashboard() {
+        assignmentCreateUserPage.selectLoginAfterApprovals();
+    }
+
+    @And("I enter email for new admin user")
+    public void iEnterEmailForNewAdminUser() {
+        assignmentCreateUserPage.enterUsernameForAdmin();
+    }
+
+
+    @And("I enter the password for the new admin user")
+    public void iEnterThePasswordForTheNewAdminUser() {
+       assignmentCreateUserPage.enterPasswordForAdmin();
+    }
+
+
+    @Then("Select Login button")
+    public void selectLoginButton() {
+     assignmentCreateUserPage.clickLoginForAdminUser();
+    }
+
+    @And("Select the new admin profile Button")
+    public void selectTheNewAdminProfileButton() {
+       assignmentCreateUserPage.selectAdminUserProfileButton();
+    }
+
+    @And("select the admin panel option for new admin user")
+    public void selectTheAdminPanelOptionForNewAdminUser() {
+       assignmentCreateUserPage.clickAdminPanelOptionForNewUser();
+    }
+
+    @Then("verify the new user admin dashboard")
+    public void verifyTheNewUserAdminDashboard() {
+       assignmentCreateUserPage.verifyAdminDashAfterApproval();
     }
 }
 

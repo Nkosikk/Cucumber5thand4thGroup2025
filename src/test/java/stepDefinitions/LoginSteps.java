@@ -31,7 +31,7 @@ public class LoginSteps extends Base {
     public void i_should_be_redirected_to_the_dashboard() {
         String actualValue = loginPage.getLoginSuccessMessage();
         System.out.println("Actual login success message: " + actualValue);
-        String expectedValue = "Welcome back, Sbuda! \uD83D\uDC4B";
+        String expectedValue = "Welcome back, admin! \uD83D\uDC4B";
         Assert.assertEquals(actualValue, expectedValue, "Expected message: " + expectedValue + ", but got: " + actualValue);
     }
 }

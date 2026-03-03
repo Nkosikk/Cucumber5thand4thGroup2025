@@ -9,4 +9,4 @@ Feature: User login test
 
     Examples:
       | username      | password     |
-      | zoziavela1@gmail.com | P@ssmee |
+      | admin@gmail.com | @12345678|
